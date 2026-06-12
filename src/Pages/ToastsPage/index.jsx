@@ -2,35 +2,33 @@ import { useState } from "react";
 import Toast from '../../components/Toast';
 import styled from "styled-components";
 
-export default function ToastsPage({message, type, onClose}){
-    
-    const [showToast, setShowToast] = useState(null);
+export default function ToastsPage() {
 
-    const handleShowSucces = () => {
-        setShowToast({message:"Sucesso! Componente Funcionando", type: "success"});
-    }
-    const handleShowError = () => {
-        setShowToast({message:"Erro! Algo deu errado", type:"error"})
+    const [toast, setToast] = useState(null);
+
+    const showToast = (type,message) => {
+        setToast({type, message});
     }
     const closeToast = () => {
-        setShowToast(null);
+        setToast(null);
     }
-    
-    
-    return(
+
+    return (
         <Container>
             <h2>Componente: Toast de Notificação</h2>
             <p>Avisos Flutuantes Temporários</p>
 
             <ButtonContainer>
-                <ButtonSucesso onClick={handleShowSucces}>Sucesso</ButtonSucesso>
-                <ButtonErro onClick={handleShowError}>Error</ButtonErro>
+                <Button $variant='#00b37e' onClick={() => showToast('success', "Sucesso Componente funcionando")}>Sucesso</Button>
+                <Button $variant='#9c0505' onClick={() => showToast("error", "Erro no componente")}>Error</Button>
+                <Button $variant='#ffee00' onClick={() => showToast("warning", "cuidado com componente")}>Warning</Button>
+                <Button $variant='rgba(27, 27, 244, 0.89)' onClick={() => showToast("info", "informação do componente")}>Info</Button>
             </ButtonContainer>
 
-            {showToast && (<Toast 
-            message={showToast.message}
-            type={showToast.type}
-            onClose={closeToast}
+            {toast && (<Toast
+                message={toast.message}
+                type={toast.type}
+                onClose={closeToast}
             />)}
         </Container>
     )
@@ -43,35 +41,30 @@ gap: 20px;
 `;
 
 const ButtonContainer = styled.div`
-display: flex;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
 gap: 15px;
-margin-top: 10px;
+margin-top: 20px;
 `;
-const ButtonSucesso = styled.button`
-padding: 12px 24px;
-background-color: #00b37e;
+const Button = styled.button`
+padding: 15px;
+background-color: ${props => props.$variant};
 color: #ffffff;
 border: none;
 border-radius: 6px;
 cursor: pointer;
 font-weitgh: bold;
+transition: transform 0.2s, filter 0.2s;
+box-shadow: 0 4px 10px rbga(0,0,0,0.2);
+
 
 &:hover{
-background-color:#95f7d6;
+filter: brightness (1.1);
+transform: translateY(-2px);
 
 }
-`;
-const ButtonErro = styled.button`
-padding: 12px 24px;
-background-color: #eb0404;
-color: #ffffff;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-font-weitgh: bold;
 
-&:hover{
-background-color: #e07e7e;
-
+&:active{
+transform: translateY(0);
 }
 `;
