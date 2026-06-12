@@ -1,9 +1,9 @@
-import styled from'styled-components';
+import styled from 'styled-components';
 import Cards from '../../components/Cards';
 
-export default function CardsPage(){
+export default function CardsPage() {
 
-    return(
+    return (
         <Container>
             <h2>
                 Componente: Cards
@@ -18,19 +18,19 @@ export default function CardsPage(){
                     </p>
 
                 </Cards>
-                <Cards title="Card Secundario" color="#63fb61">
-                    <p>
-                        Este é um card secundario.
-                    </p>
-                    <button style={{marginTop: '10px',padding:'5px 10px'}}>Ação</button>
-
-                </Cards>
             </Grid>
         </Container>
     );
 }
 const Container = styled.div`
 color: #ffffff;
+h2{
+font-size: 35px;
+text-align: center;
+}
+p {
+text-align: center;
+}
 `;
 
 const Grid = styled.div`
