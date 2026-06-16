@@ -42,37 +42,26 @@ export default function Cards() {
         }, 300);
     };
     return (
-        <Container>
-            <span>
-                Cards de Redes Sociais
-            </span>
-            <Styledwrapper>
-                <div className="container">
-                    {socialLinks.map((link) => (
-                        <div key={link.id} className={`glass ${activecard === link.id ? "clicked" : ""}`} data-text={link.name}
-                            style={{
-                                '--r': link.rotate,
-                                '--bg-color': link.color
-                            }}
-                            onClick={() => { handleCardClick(link) }}
-                        >
-                            {link.icon}
-                        </div>
-                    ))}
-                </div>
-            </Styledwrapper>
-        </Container>
+
+        <Styledwrapper>
+            <div className="container">
+                {socialLinks.map((link) => (
+                    <div key={link.id} className={`glass ${activecard === link.id ? "clicked" : ""}`} data-text={link.name}
+                        style={{
+                            '--r': link.rotate,
+                            '--bg-color': link.color
+                        }}
+                        onClick={() => { handleCardClick(link) }}
+                    >
+                        {link.icon}
+                    </div>
+                ))}
+            </div>
+        </Styledwrapper>
+
     );
 }
-const Container = styled.div`
-color: #ffffff;
 
-span{
-margin-bottom: 20px;
-font-size: 20px;
-}
-
-`;
 
 const Styledwrapper = styled.div`
 .container {
