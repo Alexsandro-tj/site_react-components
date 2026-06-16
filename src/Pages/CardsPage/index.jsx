@@ -12,12 +12,7 @@ export default function CardsPage() {
                 Container Flexiveis para agrupar conteúdo
             </p>
             <Grid>
-                <Cards title="Card Primario" color="#61dafb">
-                    <p>
-                        Este é um card primário da cor do React.
-                    </p>
-
-                </Cards>
+                <Cards />
             </Grid>
         </Container>
     );
