@@ -22,7 +22,7 @@ const Container = styled.div`
 width: 190px;
 height: 120px;
 padding: 0.5rem;
-margin-bottom: 200px;
+margin-bottom: 50px;
 
 background: rgba(198,198,198,0.34);
 backdrop-filter: blur(5px);

@@ -51,10 +51,11 @@ color: #000000;
 
 const Grid = styled.div`
 display: flex;
+height:250px;
 gap: 20px;
 margin-top: 30px;
 flex-wrap: wrap;
-margin-bottom: 200px;
+margin-bottom: 50px;
 
 `;
 const Div = styled.div`

@@ -12,6 +12,7 @@ export default function GoldenCards() {
                     </div>
                     <span className="role">Full Stack Developer</span>
                 </div>
+                
                 <span className="bottom-text">Curso React PRO</span>
 
             </div>
@@ -27,7 +28,7 @@ const Container = styled.div`
 width: 300px;
 height: 200px;
 background: var(--dark);
-position: realtive;
+position: relative;
 display: grid;
 place-content: center;  /* centralizando o conteudo do container */
 border-radius: 10px;
@@ -35,19 +36,25 @@ overflow: hidden;
 transtion: all 0.5s ease-in-out;
 cursor: pointer;
 
+
 }
 .border {
+max-width:300px;
+max-height: 200px;
 position: absolute;
 inset: 0;
 border: 2px solid var(--gold);
 opacity: 0;
 transform: rotate(10deg);
 transition: all 0.5s ease-in-out;
+
+
 }
 .card:hover {
 border-radius: 0;
 transform: scale(1.05);
 box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+
 }
 .card:hover .border{
 opacity: 1;
@@ -55,9 +62,10 @@ inset: 15px;
 transform: rotate(0deg);
 
 }
-.content {
+.content  {
 text-align: center;
 z-index: 10; 
+
 }
 .logo{
 display: flex;
@@ -123,7 +131,9 @@ opacity: 1;
 letter-spacing: 8px;
 bottom: 25px;
 white-space: nowrap;
-margin-left: 150px;
+transform: translate(0);
+padding-left: 55px;
+
 }
 
 
