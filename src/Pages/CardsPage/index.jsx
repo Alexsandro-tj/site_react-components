@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Cards from '../../components/Cards';
 import HoverCards from '../../components/Cards/HoverCards.jsx';
+import GoldenCards from '../../components/Cards/GoldenCards.jsx';
 
 export default function CardsPage() {
 
@@ -11,11 +12,17 @@ export default function CardsPage() {
             <Div>
                 <Cards />
             </Div>
-            <h3>Hover Cards (Com efeito hover)</h3>
+            <h3>2. Hover Cards (Com efeito hover)</h3>
             <Grid className='gridContainer'>
                 <HoverCards />
                 <HoverCards title="React js" description="Do zero ao mercado!" />
             </Grid>
+            <h3>3. Cards de Luxo (Efeito dourado)</h3>
+            <Grid>
+                <GoldenCards />
+            </Grid>
+
+
         </Container>
     );
 }
@@ -47,7 +54,7 @@ display: flex;
 gap: 20px;
 margin-top: 30px;
 flex-wrap: wrap;
-margin-bottom: 250px;
+margin-bottom: 200px;
 
 `;
 const Div = styled.div`
