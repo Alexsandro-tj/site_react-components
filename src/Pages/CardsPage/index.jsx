@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Cards from '../../components/Cards';
 import HoverCards from '../../components/Cards/HoverCards.jsx';
 import GoldenCards from '../../components/Cards/GoldenCards.jsx';
+import ProductCards from '../../components/Cards/ProductCards.jsx';
 
 export default function CardsPage() {
 
@@ -21,7 +22,12 @@ export default function CardsPage() {
             <Grid>
                 <GoldenCards />
             </Grid>
-
+            <h3>
+                4. Cards de Produtos (Sequencial)
+            </h3>
+            <Grid>
+                <ProductCards />
+            </Grid>
 
         </Container>
     );
